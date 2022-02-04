@@ -3,11 +3,18 @@ package DAO;
 
 import DBUtility.DBConnection;
 import Model.User;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 
 public class UserDAOImpl implements UserDAO{
 
+      Connection conn;
+    PreparedStatement ps;
+    ResultSet rs;
+    
     @Override
     public List<User> getAllUserDAO() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

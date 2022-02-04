@@ -51,16 +51,19 @@ public class check_login extends HttpServlet {
       
         switch (user.getLevel()) {
             case 1:
-                request.getRequestDispatcher("/View/admin_main.html").forward(request, response);
+              //  request.getRequestDispatcher("/View/admin_main.html").forward(request, response);
+                response.sendRedirect("View/admin_main.html"); 
                 break;
             case 2:
-                request.getRequestDispatcher("/View/manager_main.html").forward(request, response);  
+              //  request.getRequestDispatcher("/View/manager_main.html").forward(request, response);  
+                response.sendRedirect("View/manager_main.html"); 
                 break;
             case 3:
-                request.getRequestDispatcher("/View/staff_main.html").forward(request, response); 
+              //  request.getRequestDispatcher("/View/staff_main.html").forward(request, response); 
+                response.sendRedirect("View/staff_main.html"); 
                 break;
             default:
-                response.sendRedirect("/View/login.jsp"); 
+                response.sendRedirect("View/login.jsp"); 
                 break;
         }
         
