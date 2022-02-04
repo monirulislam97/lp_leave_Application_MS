@@ -27,11 +27,9 @@ public class update_info extends HttpServlet {
        
         UserDAO dao = new UserDAOImpl();
         
-        
-        request.setAttribute("u", u);
+        request.getServletContext().setAttribute("u", u);
 
-        dao.updateUserDAO(u);
-        
+        dao.updateUserDAO(u);        
 //        request.getServletContext().setAttribute("id", id);
 //        request.getServletContext().setAttribute("username", username);
 //        request.getServletContext().setAttribute("password", password);
