@@ -37,7 +37,25 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void updateUserDAO(User u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        try{
+            String updateSQL = "UPDATE user SET  username = ?,  password = ?,  level = ? WHERE id = ?";
+            conn = DBConnection.openConnection();
+            ps = conn.prepareStatement(updateSQL);
+            ps.setString(1, u.getUsername());
+            ps.setString(2, u.getPassword());
+            ps.setInt(3, u.getLevel());
+            ps.executeUpdate();    
+ 
+        }
+        catch(Exception ex){
+             ex.printStackTrace();
+        }
+        
+        
+        
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
