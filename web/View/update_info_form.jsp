@@ -62,7 +62,7 @@ if ($_SESSION["Login"] != "YES")
 				<td align="center"><input name="username" type="text" id="username" size="50" value="${user.username}"></td>
 				<td align="center"><input name="password" type="text" id="password" size="13" value="${user.password}"></td>
 
-                                <td align="center"><input name="level" type="text" id="level" size="1" value="${user.level}" disabled=""></td>
+                                                                      <td align="center"><input name="level" type="text" id="level" size="1" value="${user.level}"></td>
 				<td align="center"><input type="submit" id="update" name="Submit" value="Update"></td>
 			</tr>
 		</table>
