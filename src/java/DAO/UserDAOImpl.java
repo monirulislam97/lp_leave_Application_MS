@@ -1,6 +1,7 @@
 
 package DAO;
 
+import DBUtility.DBConnection;
 import Model.User;
 import java.util.List;
 
@@ -35,11 +36,33 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public User getUserDAO(String username, String pass) {
         
+         User u = new User();
+        try{
+            String SQL = "SELECT * FROM USER WHERE   username=? and  password = ? ";
+           conn = DBConnection.openConnection();
+           ps = conn.prepareStatement(SQL);
+           ps.setString(1, username);
+           ps.setString(2, pass);
+           rs = ps.executeQuery();
+           
+           rs.next();
+           //User u = new User(rs.getString("username"), rs.getString("id"), rs.getString("password") ,rs.getInt("level"));
+               u.setUsername(rs.getString("username"));
+              u.setId(rs.getString("id"));
+              u.setPassword(rs.getString("password"));
+              u.setLevel(rs.getInt("level"));
+  
+         
+        }catch(Exception ex){
+            
+        } 
+       
+        
+         return u;
         
         
         
-        
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
