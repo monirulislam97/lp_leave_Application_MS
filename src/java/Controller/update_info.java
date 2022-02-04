@@ -36,9 +36,6 @@ public class update_info extends HttpServlet {
 //        request.getServletContext().setAttribute("username", username);
 //        request.getServletContext().setAttribute("password", password);
 //        request.getServletContext().setAttribute("level", level);
-//       
-//        
-//        
 //        response.sendRedirect("View/newjsp.jsp");
         
         response.sendRedirect("View/staff_main.html");
