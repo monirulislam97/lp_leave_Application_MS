@@ -1,10 +1,10 @@
-<?php
+<!--<?php
 session_start();
 
 if ($_SESSION["Login"] != "YES")
 	header("Location: login.php");
 
-?>
+?>-->
 <html>
 
 <head>
@@ -29,7 +29,7 @@ if ($_SESSION["Login"] != "YES")
 	<h1>Update User Data Form</h1>
 	<br>
 	<br>
-	<?php
+<!--	<?php
 	$ID = $_SESSION["id"];
 	require("./Table/config.php");
 	$sql = "SELECT * FROM user WHERE id='$ID'";
@@ -42,11 +42,12 @@ if ($_SESSION["Login"] != "YES")
 	$pass = $rows['password'];
 	$lvl = $rows['level'];
 	?>
+-->
 
 	<!-- <button onclick="currentInfo()">Show Previous ID, Password, Level</button> -->
 
 
-	<form name="form1" method="post" action="update_info.php">
+	<form name="form1" method="post" action="../update_info">
 		<table class="center" border="0" cellspacing="5" cellpadding="0">
 
 			<tr>
@@ -57,10 +58,11 @@ if ($_SESSION["Login"] != "YES")
 				<th align="center">&nbsp;</td>
 			</tr>
 			<tr>
-				<td align="center"><input name="id" type="hidden" id="id" value="<?php echo $rows['id']; ?>"></td>
-				<td align="center"><input name="username" type="text" id="username" size="50" value="<?php echo $rows['username'] ?>"></td>
-				<td align="center"><input name="password" type="text" id="password" size="13" value="<?php echo $rows['password'] ?>"></td>
-				<td align="center"><input name="level" type="text" id="level" size="1" value="<?php echo $rows['level'] ?>"></td>
+				<td align="center"><input name="id" type="hidden" id="id" value="${user.id}"></td>
+				<td align="center"><input name="username" type="text" id="username" size="50" value="${user.username}"></td>
+				<td align="center"><input name="password" type="text" id="password" size="13" value="${user.password}"></td>
+
+                                <td align="center"><input name="level" type="text" id="level" size="1" value="${user.level}" disabled=""></td>
 				<td align="center"><input type="submit" id="update" name="Submit" value="Update"></td>
 			</tr>
 		</table>
@@ -73,7 +75,7 @@ if ($_SESSION["Login"] != "YES")
 
 </html>
 
-<?php
+<!--<?php
 
 mysqli_close($conn);
-?>
+?>-->
