@@ -16,7 +16,7 @@ public class NewApplication implements Serializable {
     public NewApplication() {
     }
 
-    public NewApplication(String id, String name, String Sdate, String Edate, int days, String status, String reason) {
+    public NewApplication(String id, String name, String Sdate, String Edate, int days, String reason, String status) {
         this.name = name;
         this.id = id;
         this.Sdate = Sdate;

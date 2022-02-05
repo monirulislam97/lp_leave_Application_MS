@@ -17,75 +17,32 @@ public class NAdaoImpl implements NAdao {
     @Override
     public List<NewApplication> getAllNAdao() {
 
-        List<NewApplication> ul = new ArrayList<NewApplication>();
+        List<NewApplication> nal = new ArrayList<NewApplication>();
 
         try {
-            String SQL = "SELECT * FROM newapplication";
+            String SQL = "SELECT  *  FROM newapplication";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(SQL);
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                NewApplication u = new NewApplication();
-                u.setId(rs.getString("id"));
-                u.setName(rs.getString("name"));
-                u.setSdate(rs.getString("Sdate"));
-                u.setEdate(rs.getString("Edate"));
-                u.setDays(rs.getInt("days"));
-                u.setReason(rs.getString("reason"));
-                u.setStatus(rs.getString("status"));
+                NewApplication na = new NewApplication(rs.getString("id"), rs.getString("name"),rs.getString("Sdate"),rs.getString("Edate"),rs.getInt("days"),rs.getString("reason"),rs.getString("status"));
+
+//                u.setId(rs.getString("id"));
+//                u.setName(rs.getString("name"));
+//                u.setSdate(rs.getString("Sdate"));
+//                u.setEdate(rs.getString("Edate"));
+//                u.setDays(rs.getInt("days"));
+//                u.setReason(rs.getString("reason"));
+//                u.setStatus(rs.getString("status"));
               
-                ul.add(u);
+                nal.add(na);
             }
 
         } catch (Exception ex) {
         }
 
-        return ul;
-        
-        
-        
-        
-        List<User> ul = new ArrayList<User>();
-        
-        try{
-            String SQL = "SELECT * FROM user";
-           conn = DBConnection.openConnection();
-           ps = conn.prepareStatement(SQL);
-           rs = ps.executeQuery();
-           
-           //rs.next();
-           
-           while(rs.next()){
-              // User u = new User(rs.getString("id"), rs.getString("name"), rs.getString("email") ,rs.getInt("age") );
-               
-              User u = new User();
-              u.setId(rs.getString("id"));
-              u.setName(rs.getString("name"));
-              u.setEmail(rs.getString("email"));
-              u.setAge(rs.getInt("age"));
-              ul.add(u);
-              
-              
-              
-           }
-            
-        }catch(Exception ex){
-            
-        } 
-        
-        
-        return ul;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        return nal;
         
     }
 
