@@ -31,7 +31,7 @@ public class NAdaoImpl implements NAdao {
                 
                 u.setId(rs.getString("id"));
                 u.setName(rs.getString("name"));
-                 u.setSdate(rs.getString("SDate"));
+                u.setSdate(rs.getString("SDate"));
                 u.setEdate(rs.getString("Edate"));
                 u.setDays(rs.getInt("days"));
                 u.setReason(rs.getString("reason"));
@@ -53,7 +53,24 @@ public class NAdaoImpl implements NAdao {
 
     @Override
     public void insertNAdao(NewApplication u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+            try{
+            String sqlinsert= "INSERT INTO NewApplication (name, id, Sdate,Edate, days, status, reason ) values(?,?,?,?,?,?,?)";
+            conn= DBConnection.openConnection();
+            ps= conn.prepareStatement(sqlinsert);
+            ps.setString(1, u.getName());
+            ps.setString(2, u.getId());
+            ps.setString(3, u.getSdate());
+            ps.setString(4, u.getEdate());
+            ps.setInt(5, u.getDays());
+            ps.setString(6, u.getStatus());
+            ps.setString(7, u.getReason());
+         
+            ps.executeUpdate();
+            
+        }
+        catch(Exception ex){ex.printStackTrace();}
+                
     }
 
     @Override
