@@ -73,12 +73,43 @@ public class NAdaoImpl implements NAdao {
 
     @Override
     public void deleteNAdao(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+         String preparedQuery = "DELETE FROM user WHERE id = ?";
+         conn = DBConnection.openConnection();
+         ps = conn.prepareStatement(preparedQuery);
+         ps.setString(1, id);
+         ps.executeUpdate();
+         
+         }catch(Exception ex){
+            
+        } 
+
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void updateNAdao(NewApplication u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+         String preparedSQL = "UPDATE user SET name = ?, Sdate = ?, Edate=?, days=?, reason=?, status=? ,age = ? WHERE id = ?";
+         conn = DBConnection.openConnection();
+         ps= conn.prepareStatement(preparedSQL);
+         
+         ps.setString(1, u.getId());
+         ps.setString(2, u.getName());
+         ps.setString(3, u.getSdate());
+         ps.setString(4, u.getEdate());
+         ps.setInt(5, u.getDays());
+         ps.setString(6, u.getReason());
+         ps.setString(7, u.getStatus());
+         ps.executeUpdate();
+         
+         
+         
+         }catch(Exception ex){
+            
+        }
+
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -1,8 +1,4 @@
-<%-- 
-    Document   : leave_form
-    Created on : Feb 5, 2022, 5:26:38 PM
-    Author     : Monir
---%>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 

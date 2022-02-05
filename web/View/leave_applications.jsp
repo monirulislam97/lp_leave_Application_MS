@@ -1,8 +1,4 @@
-<%-- 
-    Document   : leave_applications
-    Created on : Feb 5, 2022, 7:25:52 PM
-    Author     : Monir
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
