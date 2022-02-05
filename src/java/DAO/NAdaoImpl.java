@@ -48,7 +48,33 @@ public class NAdaoImpl implements NAdao {
 
     @Override
     public NewApplication getNAdao(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+ NewApplication n= new NewApplication(); 
+        try{
+            String SQL = "SELECT * FROM newapplication WHERE  id = ? ";
+           conn = DBConnection.openConnection();
+           ps = conn.prepareStatement(SQL);
+           ps.setString(1, id);
+           rs = ps.executeQuery();
+           
+           rs.next();
+                n.setId(rs.getString("id"));
+                n.setName(rs.getString("name"));
+                n.setSdate(rs.getString("Sdate"));
+                n.setEdate(rs.getString("Edate"));
+                n.setDays(rs.getInt("days"));
+                n.setReason(rs.getString("reason"));
+                n.setStatus(rs.getString("status"));
+         
+        }catch(Exception ex){
+            
+        } 
+        return n;
+
+
+
+
+// throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

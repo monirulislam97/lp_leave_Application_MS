@@ -25,14 +25,12 @@
                 <tbody>
                     
                     <tr>
-                        <td>${requestScope.NewAppList[0].getId()}222222222222</td>
-                        <td>${NewAppList.name}</td>
-                        <td>${NewAppList.name}</td>
+                        <td>${NewAppList[02].getId()}222222222222</td>
+            
                         <td>${NewAppList[1].days}</td>
                         <td>${user.id}</td>
-                        
-                        
-                        
+                        <td>${naa.id}naa</td>
+
                     </tr>
                     
                 </tbody

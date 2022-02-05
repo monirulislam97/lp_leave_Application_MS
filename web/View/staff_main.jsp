@@ -24,28 +24,29 @@
                 <h3>Staff <span>Dashboard</span></h3>
             </div>
         </header>
+
+        
+        
         <!--sidebar start-->
         <div class="sidebar">
             <center>
-                <img src="./css/images/user.png" class="profile_image" alt="" />
-                <h4>${user.username}</h4>
+                <img src="./css/images/user.png" class="profile_image" alt="">
+                <h4>${user.username} </h4>
             </center>
-           
-
             <a href="update_info_form.jsp"><i class="fas fa-user"></i><span>Edit Profile</span></a>
-
-            <a href="leave_form.jsp"><i class="fa fa-th"></i><span>Apply for Leave</span></a>
-
-            <a href="result.jsp"><i class="fas fa-eye"></i><span>Check New Application</span></a>
-
-            <a href="Leave_history.jsp"><i class="fas fa-copy"></i><span>Result History</span></a>
-
+            <a href="leave_form.jsp"><i class="fa fa-th"></i><span>Leave Form</span></a>
+            <a href="<c:url value='../application_status' />  "><i class="fas fa-eye"></i><span>Check Application Status</span></a>
+            <a href="Leave_history.php"><i class="fas fa-copy"></i><span>Result History</span></a>
+            <a href="#"><i class="fas fa-list"></i><span>Work List</span></a>
             <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
-
-            <a href="logout.jsp"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
-
+            <a href="logout.php" class="icon-a"><i class="fas fa-sign-out-alt"></i><span> Logout</span></a>
         </div>
         <!--sidebar end-->
+        
+        
+        
+        
+        
 
         <div class="content"></div>
 

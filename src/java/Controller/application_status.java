@@ -33,10 +33,15 @@ public class application_status extends HttpServlet {
     
           request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
          // request.getServletContext().setAttribute("ul", ul);
+        //  NewApplication naa = dao.getNAdao("1004");
+    
+          //request.getServletContext().setAttribute("naa", naa); //Session scope
+         // request.getServletContext().setAttribute("ul", ul);
+         
 
         
          // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/leave_applications.jsp").forward(request, response);
+          request.getRequestDispatcher("/View/Leave_history.jsp").forward(request, response);
 
         }
     }

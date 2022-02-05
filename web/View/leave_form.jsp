@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -36,7 +36,7 @@
             </center>
             <a href="update_info_form.jsp"><i class="fas fa-user"></i><span>Edit Profile</span></a>
             <a href="leave_form.jsp"><i class="fa fa-th"></i><span>Leave Form</span></a>
-            <a href="leave_applications.jsp"><i class="fas fa-eye"></i><span>Check Application Status</span></a>
+            <a href="<c:url value='../application_status' />  "><i class="fas fa-eye"></i><span>Check Application Status</span></a>
             <a href="Leave_history.php"><i class="fas fa-copy"></i><span>Result History</span></a>
             <a href="#"><i class="fas fa-list"></i><span>Work List</span></a>
             <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
