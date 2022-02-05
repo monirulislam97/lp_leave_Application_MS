@@ -20,7 +20,7 @@ public class NAdaoImpl implements NAdao {
         List<NewApplication> ul = new ArrayList<NewApplication>();
 
         try {
-            String SQL = "SELECT * FROM NewApplication";
+            String SQL = "SELECT * FROM newapplication";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(SQL);
             rs = ps.executeQuery();

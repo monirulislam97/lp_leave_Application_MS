@@ -43,7 +43,7 @@ public class add_NewApplication extends HttpServlet {
             NAdao dao = new NAdaoImpl();
             dao.insertNAdao(na);
 
-            response.sendRedirect("View/staff_main.html");
+            response.sendRedirect("View/staff_main.jsp");
         
         }
     }

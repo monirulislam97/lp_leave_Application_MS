@@ -25,14 +25,17 @@
                 <tbody>
                     
                     <tr>
-                        <td>${newapplication.id}</td>
-                        <td>${newapplication.name}</td>
-                        <td>${newapplication.days}</td>
+                        <td>${ul[0].getId()}222222222222</td>
+                        <td>${ul[1].name}</td>
+                        <td>${ul[1].days}</td>
                         
                         
                     </tr>
                     
                 </tbody
          </table>
+                        
+                        
+
     </body>
 </html>
