@@ -40,7 +40,7 @@
             <br>
             <br>
         </form>
-        <button id="p_page" onclick="window.location.href = 'check_login.php';">Previous Page</button>
+        <button id="p_page" onclick="window.location.href = 'staff_main.jsp';">Previous Page</button>
     </body>
 
 </html>
