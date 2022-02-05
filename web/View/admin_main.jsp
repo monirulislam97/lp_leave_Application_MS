@@ -34,9 +34,9 @@
                 <div class="profile">
                     <img src="./css/images/UserPhoto.png" class="pro-img" />
                     <p>
-                        <?php echo $_SESSION["USER"] ?>
+                        ${user.username}
                         <br>
-                        <?php echo $_SESSION["id"]   ?>
+                        ${user.id}
                     </p>
                 </div>
             </div>
