@@ -28,10 +28,8 @@ public class NAdaoImpl implements NAdao {
             while (rs.next()) {
                 NewApplication u = new NewApplication();
                 u.setId(rs.getString("id"));
-                
-                u.setId(rs.getString("id"));
                 u.setName(rs.getString("name"));
-                u.setSdate(rs.getString("SDate"));
+                u.setSdate(rs.getString("Sdate"));
                 u.setEdate(rs.getString("Edate"));
                 u.setDays(rs.getInt("days"));
                 u.setReason(rs.getString("reason"));

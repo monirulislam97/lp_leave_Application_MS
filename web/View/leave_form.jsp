@@ -28,7 +28,7 @@
     </div>
     <div class="right_area">
 
-      <button class="main_btn" onclick="window.location.href='check_login.php';"><i class="fas fa-home"></i> Main Page</button>
+      <button class="main_btn" onclick="window.location.href='staff_main.html';"><i class="fas fa-home"></i> Main Page</button>
 
     </div>
   </header>
@@ -40,8 +40,8 @@
     </center>
     <a href="update_info_form.jsp"><i class="fas fa-user"></i><span>Edit Profile</span></a>
     <a href="leave_form.jsp"><i class="fa fa-th"></i><span>Leave Form</span></a>
-    <a href="result.php"><i class="fas fa-eye"></i><span>View Result</span></a>
-    <a href="view_search_staff.php"><i class="fas fa-copy"></i><span>Previous Leaves</span></a>
+    <a href="leave_applications.jsp"><i class="fas fa-eye"></i><span>Check Application Status</span></a>
+     <a href="Leave_history.php"><i class="fas fa-copy"></i><span>Result History</span></a>
     <a href="#"><i class="fas fa-list"></i><span>Work List</span></a>
     <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
     <a href="logout.php" class="icon-a"><i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;Logout</a>
@@ -78,7 +78,6 @@
           <td> Staff Full Name : </td>
           <td> <input type="text" id="name" name="name" size="30" value="" /> </td>
         </tr>
-
 
         <tr>
           <td> Start Date: </td>
