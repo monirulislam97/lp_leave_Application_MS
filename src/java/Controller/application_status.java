@@ -30,14 +30,14 @@ public class application_status extends HttpServlet {
             throws ServletException, IOException {
         
           NAdao dao = new NAdaoImpl();
-          List<NewApplication> ul = dao.getAllNAdao();
+          List<NewApplication> NewAppList = dao.getAllNAdao();
     
-          request.getSession().setAttribute("ul", ul); //Session scope
+          request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
          // request.getServletContext().setAttribute("ul", ul);
 
-          log("size = "+ul.size());
-          response.sendRedirect("View/leave_applications.jsp");
-        //  request.getRequestDispatcher("/View/leave_applications.jsp").forward(request, response);
+        
+         // response.sendRedirect("View/leave_applications.jsp");
+          request.getRequestDispatcher("/View/leave_applications.jsp").forward(request, response);
 
         }
     }

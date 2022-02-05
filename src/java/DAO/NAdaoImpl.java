@@ -42,6 +42,51 @@ public class NAdaoImpl implements NAdao {
         }
 
         return ul;
+        
+        
+        
+        
+        List<User> ul = new ArrayList<User>();
+        
+        try{
+            String SQL = "SELECT * FROM user";
+           conn = DBConnection.openConnection();
+           ps = conn.prepareStatement(SQL);
+           rs = ps.executeQuery();
+           
+           //rs.next();
+           
+           while(rs.next()){
+              // User u = new User(rs.getString("id"), rs.getString("name"), rs.getString("email") ,rs.getInt("age") );
+               
+              User u = new User();
+              u.setId(rs.getString("id"));
+              u.setName(rs.getString("name"));
+              u.setEmail(rs.getString("email"));
+              u.setAge(rs.getInt("age"));
+              ul.add(u);
+              
+              
+              
+           }
+            
+        }catch(Exception ex){
+            
+        } 
+        
+        
+        return ul;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     @Override

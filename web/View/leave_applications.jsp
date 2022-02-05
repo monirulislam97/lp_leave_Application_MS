@@ -25,9 +25,11 @@
                 <tbody>
                     
                     <tr>
-                        <td>${ul[0].getId()}222222222222</td>
-                        <td>${ul[1].name}</td>
-                        <td>${ul[1].days}</td>
+                        <td>${NewAppList[0].getId()}222222222222</td>
+                        <td>${NewAppList[1].name}</td>
+                        <td>${NewAppList[1].days}</td>
+                        <td>${user.id}</td>
+                        
                         
                         
                     </tr>

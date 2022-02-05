@@ -4,8 +4,9 @@ import java.io.Serializable;
 
 public class NewApplication implements Serializable {
 
-    String name;
+    
     String id;
+    String name;
     String Sdate;
     String Edate;
     int days;
@@ -15,7 +16,7 @@ public class NewApplication implements Serializable {
     public NewApplication() {
     }
 
-    public NewApplication(String name, String id, String Sdate, String Edate, int days, String status, String reason) {
+    public NewApplication(String id, String name, String Sdate, String Edate, int days, String status, String reason) {
         this.name = name;
         this.id = id;
         this.Sdate = Sdate;
