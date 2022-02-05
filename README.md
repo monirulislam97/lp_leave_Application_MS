@@ -17,3 +17,17 @@ Group Name:    SoftX
 - Apply for Leave
 - Update Information
 - View Previous Application
+
+
+## Tech
+
+Leave Application Management System uses a number of open source technologies to develop properly:
+
+- Java
+- Servlets
+- OOP
+- MVC
+- MySQL
+- HTML5
+- CSS3
+- JSP
