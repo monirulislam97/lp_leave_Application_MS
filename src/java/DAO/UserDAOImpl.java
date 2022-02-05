@@ -33,7 +33,6 @@ public class UserDAOImpl implements UserDAO {
                 u.setPassword(rs.getString("password"));
                 u.setLevel(rs.getInt("level"));
 
-
                 ul.add(u);
             }
 
@@ -45,17 +44,63 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User getUserDAO(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        User u = new User();
+
+        try {
+            String SQL = "SELECT * FROM USER WHERE  id = ? ";
+            conn = DBConnection.openConnection();
+            ps = conn.prepareStatement(SQL);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+
+            rs.next();
+
+            u.setUsername(rs.getString("username"));
+            u.setId(rs.getString("id"));
+            u.setPassword(rs.getString("password"));
+            u.setLevel(rs.getInt("level"));
+
+        } catch (Exception ex) {
+
+        }
+        return u;
+
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void insertUserDAO(User u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String SQL = "INSERT INTO user(id,name,Sdate,Edate,days, reason, status) values (?,?,?,?,?,?,?)";
+            conn = DBConnection.openConnection();
+            ps = conn.prepareStatement(SQL);
+
+            ps.setString(1, u.getUsername());
+            ps.setString(2, u.getId());
+            ps.setString(3, u.getPassword());
+            ps.setInt(4, u.getLevel());
+            ps.executeUpdate();
+
+        } catch (Exception ex) {
+
+        }
+
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void deleteUserDAO(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+         String preparedQuery = "DELETE FROM user WHERE id = ?";
+         conn = DBConnection.openConnection();
+         ps = conn.prepareStatement(preparedQuery);
+         ps.setString(1, id);
+         ps.executeUpdate();
+         
+         }catch(Exception ex){
+            
+        } 
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
