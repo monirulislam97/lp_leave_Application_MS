@@ -11,7 +11,7 @@
     <body>
 
 
-        <h1>Your Leave History</h1>
+        <h1>Check Application Status</h1>
 
 
         <!-- Start table -->
@@ -45,7 +45,7 @@
 
 
 
-            <c:forEach items="${PreAppList}" var="p"   step="1">      
+            <c:forEach items="${NewAppList}" var="p"   step="1">      
 
                 <c:if test="${p.getId()==user.id}">
                 <tr>

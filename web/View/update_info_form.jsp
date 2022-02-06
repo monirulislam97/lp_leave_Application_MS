@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
     <head>
@@ -31,8 +31,12 @@
                     <td align="center"><input name="id" type="hidden" id="id" value="${user.id}"></td>
                     <td align="center"><input name="username" type="text" id="username" size="50" value="${user.username}"></td>
                     <td align="center"><input name="password" type="text" id="password" size="13" value="${user.password}"></td>
-
+                  <c:if test="${user.level==3}">
+                  <td align="center"><input name="level" type="text" id="level" size="1" value="${user.level}" readonly></td>
+                   </c:if>
+                    <c:if test="${user.level!=3}">
                     <td align="center"><input name="level" type="text" id="level" size="1" value="${user.level}"></td>
+                   </c:if>
                     <td align="center"><input type="submit" id="update" name="Submit" value="Update"></td>
                 </tr>
             </table>

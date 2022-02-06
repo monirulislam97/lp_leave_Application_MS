@@ -41,7 +41,7 @@ public class application_status extends HttpServlet {
 
         
          // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/Leave_history.jsp").forward(request, response);
+          request.getRequestDispatcher("/View/report.jsp").forward(request, response);
 
         }
     }
