@@ -12,15 +12,15 @@
 
     <div id="mySidenav" class="sidenav">
         <p class="level">Admin</p>
-        <a href="check_login.php" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
-        <a href="User_form.php" class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Add new user</a>
-        <a href="view_info.php" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Edit/Delete User </a>
-        <a href="report.php" class="icon-a"><i class="fa fa-file"></i> &nbsp;&nbsp;Leave Applications Report</a>
-        <a href="search_form.php" class="icon-a"><i class="fa fa-search" ></i> &nbsp;&nbsp;Search A Staff's Records</a>
+        <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+        <a href="User_form.jsp" class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Add new user</a>
+        <a href="view_info.jsp" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Edit/Delete User </a>
+        <a href="../allapplications" class="icon-a"><i class="fa fa-file"></i> &nbsp;&nbsp;Leave Applications Report</a>
+        <a href="search_form.jsp" class="icon-a"><i class="fa fa-search" ></i> &nbsp;&nbsp;Search A Staff's Records</a>
         <a href="#" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Accounts</a>
         <br>
         <br>
-        <a href="logout.php" class="icon-a"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;Logout</a>
+        <a href="login.jsp" class="icon-a"><i class="fa fa-sign-out"></i> &nbsp;&nbsp;Logout</a>
     </div>
     <div id="main">
 
