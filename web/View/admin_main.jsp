@@ -13,9 +13,9 @@
     <div id="mySidenav" class="sidenav">
         <p class="level">Admin</p>
         <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
-        <a href="User_form.jsp" class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Add new user</a>
-        <a href="view_info.jsp" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Edit/Delete User </a>
-        <a href="../allapplications" class="icon-a"><i class="fa fa-file"></i> &nbsp;&nbsp;Leave Applications Report</a>
+        <a href="user_form.jsp" class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Add new user</a>
+        <a href="../userlist" class="icon-a"><i class="fa fa-list icons"></i> &nbsp;&nbsp;Edit/Delete User </a>
+        <a href="../allapplications?datatype=''" class="icon-a"><i class="fa fa-file"></i> &nbsp;&nbsp;Leave Applications Report</a>
         <a href="search_form.jsp" class="icon-a"><i class="fa fa-search" ></i> &nbsp;&nbsp;Search A Staff's Records</a>
         <a href="#" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Accounts</a>
         <br>

@@ -19,7 +19,7 @@
 
         <form name="form1" method="post" action="../update_info">
             <table class="center" border="0" cellspacing="5" cellpadding="0">
-
+            <input name="datatype" type="hidden" id="datatype" value="update">
                 <tr>
                     <th align="center">&nbsp;</td>
                     <th class="Username" align="center"><strong>Username</strong></th>

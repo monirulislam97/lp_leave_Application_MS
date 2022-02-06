@@ -71,7 +71,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void insertUserDAO(User u) {
         try {
-            String SQL = "INSERT INTO user(id,name,Sdate,Edate,days, reason, status) values (?,?,?,?,?,?,?)";
+            String SQL = "INSERT INTO user(username,id,password, level) values (?,?,?,?)";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(SQL);
 

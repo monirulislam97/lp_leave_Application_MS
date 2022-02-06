@@ -5,15 +5,11 @@
  */
 package Controller;
 
-import DAO.NAdao;
-import DAO.NAdaoImpl;
-import DAO.PAdao;
-import DAO.PAdaoImpl;
-import Model.NewApplication;
-import Model.PreviousApplication;
+import DAO.UserDAO;
+import DAO.UserDAOImpl;
+import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author User
  */
-@WebServlet(name = "allapplications", urlPatterns = {"/allapplications"})
-public class allapplications extends HttpServlet {
+@WebServlet(name = "add_user", urlPatterns = {"/add_user"})
+public class add_user extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,10 +40,10 @@ public class allapplications extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet allapplications</title>");            
+            out.println("<title>Servlet add_user</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet allapplications at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet add_user at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -65,37 +61,7 @@ public class allapplications extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        String datatype = request.getParameter("datatype");
-        
-        
-       
-        PAdao dao = new PAdaoImpl();
-          List<PreviousApplication> PreAppList = dao.getAllPAdao();
-    
-          request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-        //  NewApplication naa = dao.getNAdao("1004");
-    
-          //request.getServletContext().setAttribute("naa", naa); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-         NAdao ado = new NAdaoImpl();
-          List<NewApplication> NewAppList = ado.getAllNAdao();
-    
-          request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
-
-         if(datatype.equals("search"))
-        {
-            
-            String staffID = request.getParameter("staffID");
-            request.getSession().setAttribute("staffID", staffID); //Session scope
-            request.getRequestDispatcher("/View/view_search_staff.jsp").forward(request, response);
-        }
-        else{
-         // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/allreport.jsp").forward(request, response);
-          
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -109,7 +75,27 @@ public class allapplications extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        
+        
+        String username = request.getParameter("username");
+        String id = request.getParameter("id");
+        String password = request.getParameter("password");
+        int level = Integer.parseInt(request.getParameter("level"));
+        User u = new User(username, id, password, level );
+       
+        UserDAO dao = new UserDAOImpl();
+        
+        request.getServletContext().setAttribute("u", u);
+
+        dao.insertUserDAO(u);        
+//        request.getServletContext().setAttribute("id", id);
+//        request.getServletContext().setAttribute("username", username);
+//        request.getServletContext().setAttribute("password", password);
+//        request.getServletContext().setAttribute("level", level);
+//        response.sendRedirect("View/newjsp.jsp");
+        
+        response.sendRedirect("View/admin_main.jsp");
     }
 
     /**
