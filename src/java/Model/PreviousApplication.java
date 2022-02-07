@@ -15,7 +15,7 @@ public class PreviousApplication implements Serializable {
     public PreviousApplication() {
     }
 
-    public PreviousApplication(String name, String id, String Sdate, String Edate, int days, String status, String reason) {
+    public PreviousApplication(String id, String name, String Sdate, String Edate, int days,  String reason, String status) {
         this.name = name;
         this.id = id;
         this.Sdate = Sdate;

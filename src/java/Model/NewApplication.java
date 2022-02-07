@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class NewApplication implements Serializable {
 
-    
+    String applicationId;
     String id;
     String name;
     String Sdate;
@@ -24,6 +24,15 @@ public class NewApplication implements Serializable {
         this.days = days;
         this.status = status;
         this.reason = reason;
+        applicationId="";
+    }
+
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
     }
 
     public String getName() {

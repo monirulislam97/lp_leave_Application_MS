@@ -35,6 +35,7 @@ public class NAdaoImpl implements NAdao {
 //                u.setDays(rs.getInt("days"));
 //                u.setReason(rs.getString("reason"));
 //                u.setStatus(rs.getString("status"));
+na.setApplicationId(rs.getString("applicationId"));
               
                 nal.add(na);
             }
@@ -47,14 +48,14 @@ public class NAdaoImpl implements NAdao {
     }
 
     @Override
-    public NewApplication getNAdao(String id) {
+    public NewApplication getNAdao(String applicationId) {
        
  NewApplication n= new NewApplication(); 
         try{
-            String SQL = "SELECT * FROM newapplication WHERE  id = ? ";
+            String SQL = "SELECT * FROM newapplication WHERE  applicationId = ? ";
            conn = DBConnection.openConnection();
            ps = conn.prepareStatement(SQL);
-           ps.setString(1, id);
+           ps.setString(1, applicationId);
            rs = ps.executeQuery();
            
            rs.next();
@@ -65,6 +66,7 @@ public class NAdaoImpl implements NAdao {
                 n.setDays(rs.getInt("days"));
                 n.setReason(rs.getString("reason"));
                 n.setStatus(rs.getString("status"));
+                n.setApplicationId(rs.getString("applicationId"));
          
         }catch(Exception ex){
             
@@ -81,7 +83,7 @@ public class NAdaoImpl implements NAdao {
     public void insertNAdao(NewApplication u) {
        
             try{
-            String sqlinsert= "INSERT INTO NewApplication (name, id, Sdate,Edate, days, status, reason ) values(?,?,?,?,?,?,?)";
+            String sqlinsert= "INSERT INTO newapplication (name, id, Sdate,Edate, days, status, reason ) values(?,?,?,?,?,?,?)";
             conn= DBConnection.openConnection();
             ps= conn.prepareStatement(sqlinsert);
             ps.setString(1, u.getName());
@@ -100,12 +102,12 @@ public class NAdaoImpl implements NAdao {
     }
 
     @Override
-    public void deleteNAdao(String id) {
+    public void deleteNAdao(String applicationId) {
         try{
-         String preparedQuery = "DELETE FROM user WHERE id = ?";
+         String preparedQuery = "DELETE FROM newapplication WHERE applicationId = ?";
          conn = DBConnection.openConnection();
          ps = conn.prepareStatement(preparedQuery);
-         ps.setString(1, id);
+         ps.setString(1, applicationId);
          ps.executeUpdate();
          
          }catch(Exception ex){
@@ -118,7 +120,7 @@ public class NAdaoImpl implements NAdao {
     @Override
     public void updateNAdao(NewApplication u) {
         try{
-         String preparedSQL = "UPDATE user SET name = ?, Sdate = ?, Edate=?, days=?, reason=?, status=? ,age = ? WHERE id = ?";
+         String preparedSQL = "UPDATE newapplication SET name = ?, Sdate = ?, Edate=?, days=?, reason=?, status=? ,age = ? WHERE id = ?";
          conn = DBConnection.openConnection();
          ps= conn.prepareStatement(preparedSQL);
          

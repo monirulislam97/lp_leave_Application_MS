@@ -44,7 +44,17 @@
             <br>
             <br>
         </form>
-        <button id="p_page" onclick="window.location.href = 'staff_main.jsp';">Previous Page</button>
+                  
+                  <c:if test="${user.level==3}">
+                 <button id="p_page" onclick="window.location.href = 'staff_main.jsp';">Main Page</button>
+                   </c:if>
+                    <c:if test="${user.level==1}">
+                   <button id="p_page" onclick="window.location.href = 'admin_main.jsp';">Main Page</button>
+                   </c:if>
+                   <c:if test="${user.level==2}">
+                   <button id="p_page" onclick="window.location.href = 'manager_main.jsp';">Main Page</button>
+                   </c:if>
+      
     </body>
 
 </html>

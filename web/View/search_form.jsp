@@ -1,5 +1,5 @@
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
 <head>
@@ -26,7 +26,13 @@
     </form>
     <br>
 
-    <button onclick="window.location.href = 'admin_main.jsp'">Main Page</button>
+    
+                    <c:if test="${user.level==1}">
+                   <button id="p_page" onclick="window.location.href = 'admin_main.jsp';">Main Page</button>
+                   </c:if>
+                   <c:if test="${user.level==2}">
+                   <button id="p_page" onclick="window.location.href = 'manager_main.jsp';">Main Page</button>
+                   </c:if>
 </body>
 
 </html>

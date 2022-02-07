@@ -8,6 +8,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author User
+ */
 public class PAdaoImpl implements PAdao {
 
     Connection conn;
@@ -48,7 +52,7 @@ public class PAdaoImpl implements PAdao {
     public PreviousApplication getPAdao(String id) {
         PreviousApplication u = new PreviousApplication();
         try {
-            String SQL = "SELECT * FROM USER WHERE  id = ? ";
+            String SQL = "SELECT * FROM PreviousApplication WHERE  id = ? ";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(SQL);
             ps.setString(1, id);
@@ -75,7 +79,7 @@ public class PAdaoImpl implements PAdao {
     public void insertPAdao(PreviousApplication u) {
         try {
 
-            String SQL = "INSERT INTO user(id,name,Sdate,Edate,days,reason,status) values (?,?,?,?,?,?,?)";
+            String SQL = "INSERT INTO PreviousApplication(id,name,Sdate,Edate,days,reason,status) values (?,?,?,?,?,?,?)";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(SQL);
             ps.setString(1, u.getId());
@@ -98,7 +102,7 @@ public class PAdaoImpl implements PAdao {
     public void deletePAdao(String id) {
 
         try {
-            String preparedQuery = "DELETE FROM user WHERE id = ?";
+            String preparedQuery = "DELETE FROM PreviousApplication WHERE id = ?";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(preparedQuery);
             ps.setString(1, id);
