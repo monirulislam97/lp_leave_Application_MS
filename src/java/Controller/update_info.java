@@ -1,4 +1,3 @@
-
 package Controller;
 
 import DAO.UserDAO;
@@ -15,62 +14,50 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "update_info", urlPatterns = {"/update_info"})
 public class update_info extends HttpServlet {
 
-
-     protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         
+
         String datatype = request.getParameter("datatype");
-        
-        
-        if(datatype.equals("delete"))
-        {
+
+        if (datatype.equals("delete")) {
             String id = request.getParameter("id");
-            
+
             UserDAO dao = new UserDAOImpl();
-            dao.deleteUserDAO(id); 
-            
+            dao.deleteUserDAO(id);
+
             response.sendRedirect("View/admin_main.jsp");
-            
-            
-       }else if(datatype.equals("edit")){
-          
-       
-      String id = request.getParameter("id");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        int level = Integer.parseInt(request.getParameter("level"));
-        User u = new User(username, id, password, level );
-       
-        UserDAO dao = new UserDAOImpl();
-        
-        request.getServletContext().setAttribute("u", u);
 
-        dao.updateUserDAO(u);
-            
-       response.sendRedirect("View/admin_main.jsp");
-        }else{
-        
-        
-        String id = request.getParameter("id");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        int level = Integer.parseInt(request.getParameter("level"));
-        User u = new User(username, id, password, level );
-       
-        UserDAO dao = new UserDAOImpl();
-        
-        request.getServletContext().setAttribute("u", u);
+        } else if (datatype.equals("edit")) {
 
-        dao.updateUserDAO(u);        
-//        request.getServletContext().setAttribute("id", id);
-//        request.getServletContext().setAttribute("username", username);
-//        request.getServletContext().setAttribute("password", password);
-//        request.getServletContext().setAttribute("level", level);
-//        response.sendRedirect("View/newjsp.jsp");
-        
-        response.sendRedirect("View/staff_main.jsp");
+            String id = request.getParameter("id");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            int level = Integer.parseInt(request.getParameter("level"));
+            User u = new User(username, id, password, level);
+
+            UserDAO dao = new UserDAOImpl();
+
+            request.getServletContext().setAttribute("u", u);
+
+            dao.updateUserDAO(u);
+
+            response.sendRedirect("View/admin_main.jsp");
+        } else {
+
+            String id = request.getParameter("id");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            int level = Integer.parseInt(request.getParameter("level"));
+            User u = new User(username, id, password, level);
+
+            UserDAO dao = new UserDAOImpl();
+
+            request.getServletContext().setAttribute("u", u);
+
+            dao.updateUserDAO(u);
+
+            response.sendRedirect("View/staff_main.jsp");
         }
-        
-        }
+
     }
-
+}

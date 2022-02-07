@@ -90,16 +90,16 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void deleteUserDAO(String id) {
-        try{
-         String preparedQuery = "DELETE FROM user WHERE id = ?";
-         conn = DBConnection.openConnection();
-         ps = conn.prepareStatement(preparedQuery);
-         ps.setString(1, id);
-         ps.executeUpdate();
-         
-         }catch(Exception ex){
-            
-        } 
+        try {
+            String preparedQuery = "DELETE FROM user WHERE id = ?";
+            conn = DBConnection.openConnection();
+            ps = conn.prepareStatement(preparedQuery);
+            ps.setString(1, id);
+            ps.executeUpdate();
+
+        } catch (Exception ex) {
+
+        }
 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -39,32 +39,24 @@ public class manage extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String datatype = request.getParameter("datatype");
-        
-        
-       
+        String datatype = request.getParameter("datatype");
+
         PAdao dao = new PAdaoImpl();
-          List<PreviousApplication> PreAppList = dao.getAllPAdao();
-    
-          request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
+        List<PreviousApplication> PreAppList = dao.getAllPAdao();
+
+        request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
+        // request.getServletContext().setAttribute("ul", ul);
         //  NewApplication naa = dao.getNAdao("1004");
-    
-          //request.getServletContext().setAttribute("naa", naa); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-         NAdao ado = new NAdaoImpl();
-          List<NewApplication> NewAppList = ado.getAllNAdao();
-    
-          request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
 
-         
-          
+        //request.getServletContext().setAttribute("naa", naa); //Session scope
+        // request.getServletContext().setAttribute("ul", ul);
+        NAdao ado = new NAdaoImpl();
+        List<NewApplication> NewAppList = ado.getAllNAdao();
 
-    
-    
-    
-         // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/Approve.jsp").forward(request, response);
+        request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
+
+        // response.sendRedirect("View/leave_applications.jsp");
+        request.getRequestDispatcher("/View/Approve.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -79,35 +71,21 @@ public class manage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
         String datatype = request.getParameter("datatype");
-        
-        
-       
+
         PAdao dao = new PAdaoImpl();
-          List<PreviousApplication> PreAppList = dao.getAllPAdao();
-    
-          request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-        //  NewApplication naa = dao.getNAdao("1004");
-    
-          //request.getServletContext().setAttribute("naa", naa); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-         NAdao ado = new NAdaoImpl();
-          List<NewApplication> NewAppList = ado.getAllNAdao();
-    
-          request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
+        List<PreviousApplication> PreAppList = dao.getAllPAdao();
 
-         
-          
+        request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
 
-    
-    
-    
-         // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/Approve.jsp").forward(request, response);
-         
-        
+        NAdao ado = new NAdaoImpl();
+        List<NewApplication> NewAppList = ado.getAllNAdao();
+
+        request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
+
+        request.getRequestDispatcher("/View/Approve.jsp").forward(request, response);
+
     }
 
     /**

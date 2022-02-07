@@ -23,27 +23,16 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "application_status", urlPatterns = {"/application_status"})
 public class application_status extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-          NAdao dao = new NAdaoImpl();
-          List<NewApplication> NewAppList = dao.getAllNAdao();
-    
-          request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-        //  NewApplication naa = dao.getNAdao("1004");
-    
-          //request.getServletContext().setAttribute("naa", naa); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-         
 
-        
-         // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/report.jsp").forward(request, response);
+        NAdao dao = new NAdaoImpl();
+        List<NewApplication> NewAppList = dao.getAllNAdao();
 
-        }
+        request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
+
+        request.getRequestDispatcher("/View/report.jsp").forward(request, response);
+
     }
-
- 
+}

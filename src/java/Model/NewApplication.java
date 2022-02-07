@@ -24,7 +24,7 @@ public class NewApplication implements Serializable {
         this.days = days;
         this.status = status;
         this.reason = reason;
-        applicationId="";
+        applicationId = "";
     }
 
     public String getApplicationId() {
@@ -90,6 +90,5 @@ public class NewApplication implements Serializable {
     public void setReason(String reason) {
         this.reason = reason;
     }
-    
-    
+
 }

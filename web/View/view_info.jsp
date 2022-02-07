@@ -82,22 +82,12 @@
            
         </form>        
 
-	
-                    
-                    
-                    
-                    
+         
                     
                <button onclick="window.location.href = './View/admin_main.jsp'">Main Page</button>
                                                             
 
-                                                                      
 
-                                                                        
-                                                                        
-	
-	
-        
         
         </body>
 

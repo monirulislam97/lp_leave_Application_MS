@@ -41,7 +41,7 @@ public class userlist extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet userlist</title>");            
+            out.println("<title>Servlet userlist</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet userlist at " + request.getContextPath() + "</h1>");
@@ -62,23 +62,13 @@ public class userlist extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         
-       
-        UserDAO dao = new UserDAOImpl();
-        
-       
 
+        UserDAO dao = new UserDAOImpl();
 
         List<User> UserList = dao.getAllUserDAO();
-    
-       request.getSession().setAttribute("UserList", UserList);
-//        request.getServletContext().setAttribute("id", id);
-//        request.getServletContext().setAttribute("username", username);
-//        request.getServletContext().setAttribute("password", password);
-//        request.getServletContext().setAttribute("level", level);
-//        response.sendRedirect("View/newjsp.jsp");
-        
-       
+
+        request.getSession().setAttribute("UserList", UserList);
+
         request.getRequestDispatcher("/View/view_info.jsp").forward(request, response);
     }
 

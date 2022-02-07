@@ -2,16 +2,15 @@ package Model;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+public class User implements Serializable {
+
     String username;
     String id;
     String password;
     int level;
-    
-    
+
     public User() {
     }
-
 
     public User(String username, String id, String password, int level) {
         this.username = username;
@@ -19,8 +18,6 @@ public class User implements Serializable{
         this.password = password;
         this.level = level;
     }
-
-    
 
     public String getUsername() {
         return username;
@@ -53,8 +50,5 @@ public class User implements Serializable{
     public void setLevel(int level) {
         this.level = level;
     }
-    
-    
-    
-    
+
 }

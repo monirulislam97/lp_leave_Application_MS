@@ -12,29 +12,12 @@
 
         <h1>Approve/Decline Leave Application</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="content-box">
             <table width="600px" border="1" cellspacing="0" cellpadding="3">
 
                 <!-- Print table heading -->
                 <tr>
-                     <th align="center"><strong>Application ID</strong></th>  
+                    <th align="center"><strong>Application ID</strong></th>  
                     <th align="center"><strong>Start Date</strong></th>
                     <th align="center"><strong>End Date</strong></th>
                     <th align="center"><strong>Number of Days</strong></th>
@@ -59,15 +42,8 @@
                 </c:forEach>
 
 
-
-
             </table>
             <br>
-
-
-
-
-
 
 
 

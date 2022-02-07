@@ -40,7 +40,7 @@ public class add_user extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet add_user</title>");            
+            out.println("<title>Servlet add_user</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet add_user at " + request.getContextPath() + "</h1>");
@@ -75,26 +75,19 @@ public class add_user extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
+
         String username = request.getParameter("username");
         String id = request.getParameter("id");
         String password = request.getParameter("password");
         int level = Integer.parseInt(request.getParameter("level"));
-        User u = new User(username, id, password, level );
-       
+        User u = new User(username, id, password, level);
+
         UserDAO dao = new UserDAOImpl();
-        
+
         request.getServletContext().setAttribute("u", u);
 
-        dao.insertUserDAO(u);        
-//        request.getServletContext().setAttribute("id", id);
-//        request.getServletContext().setAttribute("username", username);
-//        request.getServletContext().setAttribute("password", password);
-//        request.getServletContext().setAttribute("level", level);
-//        response.sendRedirect("View/newjsp.jsp");
-        
+        dao.insertUserDAO(u);
+
         response.sendRedirect("View/admin_main.jsp");
     }
 

@@ -43,7 +43,7 @@ public class aproval extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet aproval</title>");            
+            out.println("<title>Servlet aproval</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet aproval at " + request.getContextPath() + "</h1>");
@@ -78,35 +78,21 @@ public class aproval extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     
-        
-      
+
         String aid = request.getParameter("id");
         String Approval = request.getParameter("Approval");
-       NAdao n = new NAdaoImpl();
-       NewApplication newapp = n.getNAdao(aid);
-        
-         n.deleteNAdao(aid);
-        PreviousApplication prea= new PreviousApplication(newapp.getId(), newapp.getName(), newapp.getSdate(), newapp.getEdate(), newapp.getDays(), newapp.getReason(), Approval );
-        
-        
+        NAdao n = new NAdaoImpl();
+        NewApplication newapp = n.getNAdao(aid);
+
+        n.deleteNAdao(aid);
+        PreviousApplication prea = new PreviousApplication(newapp.getId(), newapp.getName(), newapp.getSdate(), newapp.getEdate(), newapp.getDays(), newapp.getReason(), Approval);
+
         PAdaoImpl pa = new PAdaoImpl();
-        
+
         pa.insertPAdao(prea);
-        
-//        
-//       
-//        
-//        n.deleteNAdao(aid);
 
-
-        
-        
         request.getRequestDispatcher("manage").forward(request, response);
-      
-        
-        
-        
+
     }
 
     /**

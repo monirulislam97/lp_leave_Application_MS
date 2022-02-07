@@ -44,7 +44,7 @@ public class application_history extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet application_history</title>");            
+            out.println("<title>Servlet application_history</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet application_history at " + request.getContextPath() + "</h1>");
@@ -65,20 +65,12 @@ public class application_history extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                  PAdao dao = new PAdaoImpl();
-          List<PreviousApplication> PreAppList = dao.getAllPAdao();
-    
-          request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-        //  NewApplication naa = dao.getNAdao("1004");
-    
-          //request.getServletContext().setAttribute("naa", naa); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-         
+        PAdao dao = new PAdaoImpl();
+        List<PreviousApplication> PreAppList = dao.getAllPAdao();
 
-        
-         // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/Leave_history.jsp").forward(request, response);
+        request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
+
+        request.getRequestDispatcher("/View/Leave_history.jsp").forward(request, response);
     }
 
     /**

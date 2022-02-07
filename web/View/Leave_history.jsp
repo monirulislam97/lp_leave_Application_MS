@@ -48,14 +48,14 @@
             <c:forEach items="${PreAppList}" var="p"   step="1">      
 
                 <c:if test="${p.getId()==user.id}">
-                <tr>
-                    <td>${p.getSdate()}</td>
-                    <td>${p.getEdate()}</td>
-                    <td>${p.getDays()}</td>
-                    <td>${p.getReason()}</td>
-                    <td>${p.getStatus()}</td>
-                 </tr>
-                 </c:if>
+                    <tr>
+                        <td>${p.getSdate()}</td>
+                        <td>${p.getEdate()}</td>
+                        <td>${p.getDays()}</td>
+                        <td>${p.getReason()}</td>
+                        <td>${p.getStatus()}</td>
+                    </tr>
+                </c:if>
             </c:forEach>
 
 

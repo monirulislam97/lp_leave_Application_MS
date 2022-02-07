@@ -45,7 +45,7 @@ public class allapplications extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet allapplications</title>");            
+            out.println("<title>Servlet allapplications</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet allapplications at " + request.getContextPath() + "</h1>");
@@ -66,44 +66,30 @@ public class allapplications extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        String datatype = request.getParameter("datatype");
-        
-        
-       
-        PAdao dao = new PAdaoImpl();
-          List<PreviousApplication> PreAppList = dao.getAllPAdao();
-    
-          request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-        //  NewApplication naa = dao.getNAdao("1004");
-    
-          //request.getServletContext().setAttribute("naa", naa); //Session scope
-         // request.getServletContext().setAttribute("ul", ul);
-         NAdao ado = new NAdaoImpl();
-          List<NewApplication> NewAppList = ado.getAllNAdao();
-    
-          request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
 
-         
-          
-         
-if(datatype.equals("search"))
-        {
-            
+        String datatype = request.getParameter("datatype");
+
+        PAdao dao = new PAdaoImpl();
+        List<PreviousApplication> PreAppList = dao.getAllPAdao();
+
+        request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
+
+        NAdao ado = new NAdaoImpl();
+        List<NewApplication> NewAppList = ado.getAllNAdao();
+
+        request.getSession().setAttribute("NewAppList", NewAppList); //Session scope
+
+        if (datatype.equals("search")) {
+
             String staffID = request.getParameter("staffID");
             request.getSession().setAttribute("staffID", staffID); //Session scope
             request.getRequestDispatcher("/View/view_search_staff.jsp").forward(request, response);
-        }
-        else{
-    
-    
-    
-         // response.sendRedirect("View/leave_applications.jsp");
-          request.getRequestDispatcher("/View/allreport.jsp").forward(request, response);
-         }
-        
-    }
+        } else {
 
+            // response.sendRedirect("View/leave_applications.jsp");
+            request.getRequestDispatcher("/View/allreport.jsp").forward(request, response);
+        }
+
+    }
 
 }
