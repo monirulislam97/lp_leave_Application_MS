@@ -57,6 +57,15 @@
                  </tr>
                  </c:if>
             </c:forEach>
+                  <c:if test="${prea.getId()==user.id}">
+                <tr>
+                    <td>${prea.getSdate()}</td>
+                    <td>${prea.getEdate()}</td>
+                    <td>${prea.getDays()}</td>
+                    <td>${prea.getReason()}</td>
+                    <td>${prea.getStatus()}</td>
+                 </tr>
+              </c:if>
 
 
         </table>

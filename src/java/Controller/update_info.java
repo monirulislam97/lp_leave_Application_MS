@@ -25,7 +25,7 @@ public class update_info extends HttpServlet {
             UserDAO dao = new UserDAOImpl();
             dao.deleteUserDAO(id);
 
-            response.sendRedirect("View/admin_main.jsp");
+            response.sendRedirect("userlist");
 
         } else if (datatype.equals("edit")) {
 
@@ -37,12 +37,14 @@ public class update_info extends HttpServlet {
 
             UserDAO dao = new UserDAOImpl();
 
-            request.getServletContext().setAttribute("u", u);
+     
 
             dao.updateUserDAO(u);
 
             response.sendRedirect("View/admin_main.jsp");
-        } else {
+        } else if (datatype.equals("update")) {
+                
+                
 
             String id = request.getParameter("id");
             String username = request.getParameter("username");
@@ -52,7 +54,21 @@ public class update_info extends HttpServlet {
 
             UserDAO dao = new UserDAOImpl();
 
-            request.getServletContext().setAttribute("u", u);
+           
+
+            dao.updateUserDAO(u);
+
+            response.sendRedirect("View/manager_main.jsp");
+         } else{    
+            
+            String id = request.getParameter("id");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            int level = Integer.parseInt(request.getParameter("level"));
+            User u = new User(username, id, password, level);
+
+            UserDAO dao = new UserDAOImpl();
+
 
             dao.updateUserDAO(u);
 

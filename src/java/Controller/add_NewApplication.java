@@ -29,7 +29,7 @@ public class add_NewApplication extends HttpServlet {
             int days= Integer.parseInt(request.getParameter("numdays"));
             String status= request.getParameter("status");
             String reason= request.getParameter("reason");
-            NewApplication na = new NewApplication(name, id, Sdate, Edate,days,status,reason);
+            NewApplication na = new NewApplication( id, name, Sdate, Edate,days,reason,status);
             
 
        

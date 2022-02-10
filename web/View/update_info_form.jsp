@@ -19,13 +19,13 @@
 
         <form name="form1" method="post" action="../update_info">
             <table class="center" border="0" cellspacing="5" cellpadding="0">
-            <input name="datatype" type="hidden" id="datatype" value="update">
+            
                 <tr>
                     <th align="center">&nbsp;</td>
                     <th class="Username" align="center"><strong>Username</strong></th>
                     <th class="password" align="center"><strong>Password</strong></th>
                     <th class="level" align="center"><strong>Level</strong></th>
-                    <th align="center">&nbsp;</td>
+                    <th align="center"><input name="datatype" type="hidden" id="datatype" value="update"></td>
                 </tr>
                 <tr>
                     <td align="center"><input name="id" type="hidden" id="id" value="${user.id}"></td>

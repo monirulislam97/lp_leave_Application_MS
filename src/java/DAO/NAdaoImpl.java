@@ -26,7 +26,7 @@ public class NAdaoImpl implements NAdao {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                NewApplication na = new NewApplication(rs.getString("id"), rs.getString("name"), rs.getString("Sdate"), rs.getString("Edate"), rs.getInt("days"), rs.getString("reason"), rs.getString("status"));
+                NewApplication na = new NewApplication( rs.getString("id"), rs.getString("name"), rs.getString("Sdate"), rs.getString("Edate"), rs.getInt("days"), rs.getString("reason"), rs.getString("status") );
 
                 na.setApplicationId(rs.getString("applicationId"));
 
@@ -73,16 +73,17 @@ public class NAdaoImpl implements NAdao {
     public void insertNAdao(NewApplication u) {
 
         try {
-            String sqlinsert = "INSERT INTO newapplication (name, id, Sdate,Edate, days, status, reason ) values(?,?,?,?,?,?,?)";
+            String sqlinsert = "INSERT INTO newapplication (id, name, Sdate,Edate, days, reason, status ) values(?,?,?,?,?,?,?)";
             conn = DBConnection.openConnection();
             ps = conn.prepareStatement(sqlinsert);
-            ps.setString(1, u.getName());
-            ps.setString(2, u.getId());
+            
+            ps.setString(1, u.getId());
+            ps.setString(2, u.getName());
             ps.setString(3, u.getSdate());
             ps.setString(4, u.getEdate());
             ps.setInt(5, u.getDays());
-            ps.setString(6, u.getStatus());
-            ps.setString(7, u.getReason());
+            ps.setString(6, u.getReason());
+            ps.setString(7, u.getStatus());
 
             ps.executeUpdate();
 

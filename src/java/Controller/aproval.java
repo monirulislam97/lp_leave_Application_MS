@@ -83,13 +83,17 @@ public class aproval extends HttpServlet {
         String Approval = request.getParameter("Approval");
         NAdao n = new NAdaoImpl();
         NewApplication newapp = n.getNAdao(aid);
+        
+       
 
         n.deleteNAdao(aid);
-        PreviousApplication prea = new PreviousApplication(newapp.getId(), newapp.getName(), newapp.getSdate(), newapp.getEdate(), newapp.getDays(), newapp.getReason(), Approval);
+        PreviousApplication prea = new PreviousApplication(  newapp.getId(), newapp.getName(), newapp.getSdate(), newapp.getEdate(), newapp.getDays(), newapp.getReason(), Approval );
 
         PAdaoImpl pa = new PAdaoImpl();
 
         pa.insertPAdao(prea);
+        
+        request.getSession().setAttribute("prea", prea); //Session scope
 
         request.getRequestDispatcher("manage").forward(request, response);
 

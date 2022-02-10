@@ -41,15 +41,6 @@ public class manage extends HttpServlet {
             throws ServletException, IOException {
         String datatype = request.getParameter("datatype");
 
-        PAdao dao = new PAdaoImpl();
-        List<PreviousApplication> PreAppList = dao.getAllPAdao();
-
-        request.getSession().setAttribute("PreAppList", PreAppList); //Session scope
-        // request.getServletContext().setAttribute("ul", ul);
-        //  NewApplication naa = dao.getNAdao("1004");
-
-        //request.getServletContext().setAttribute("naa", naa); //Session scope
-        // request.getServletContext().setAttribute("ul", ul);
         NAdao ado = new NAdaoImpl();
         List<NewApplication> NewAppList = ado.getAllNAdao();
 

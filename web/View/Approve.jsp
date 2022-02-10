@@ -5,7 +5,7 @@
         <title>Approving</title>
         <link rel="stylesheet" href="./css/table_report.css" type="text/css" />
         <link rel="stylesheet" href="./View/css/table_report.css" type="text/css" />
-    <head>
+    </head>
 
 
     <body>
@@ -53,13 +53,13 @@
 
                     <tr>
                         <th class="ID" align="center"><strong>Application ID</strong></th>  
-                        <th align="center">&nbsp;</td>
-                        <th align="center">&nbsp;</td>
+                        <th align="center">&nbsp;</th>
+                        <th align="center">&nbsp;</th>
                     </tr>
                     <tr>
                         <td align="center"><input name="id" type="text" id="id"  required=""></td>
-                    <input name="datatype" type="hidden" id="datatype" value="delete">
-                    <td align="center">   <input type="submit" name="Approval" value="Approve"></td>
+                    
+                    <td align="center">   <input type="submit" name="Approval" value="Approved"></td>
                     <td><input type="submit" name="Approval" value="Decline"></td>
                     </tr>
                 </table>
@@ -68,10 +68,10 @@
 
 
 
-        </form>
+  
 
         <button onclick="window.location.href = 'View/manager_main.jsp'">Main Page</button>
-
+        </div>
 </body>
 
 </html>

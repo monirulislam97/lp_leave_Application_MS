@@ -23,7 +23,8 @@
 
             <!-- Print table heading -->
             <tr>
-
+               
+                <th align="center"><strong>Name</strong></th> 
                 <th align="center"><strong>Start Date</strong></th>
                 <th align="center"><strong>End Date</strong></th>
                 <th align="center"><strong>Number of Days</strong></th>
@@ -36,7 +37,9 @@
             <c:forEach items="${NewAppList}" var="p1"   step="1">      
 
                
-                <tr>
+                <tr> 
+                  
+                    <td>${p1.getName()}</td>
                     <td>${p1.getSdate()}</td>
                     <td>${p1.getEdate()}</td>
                     <td>${p1.getDays()}</td>
@@ -50,6 +53,8 @@
 
               
                 <tr>
+                    
+                    <td>${p2.getName()}</td>
                     <td>${p2.getSdate()}</td>
                     <td>${p2.getEdate()}</td>
                     <td>${p2.getDays()}</td>

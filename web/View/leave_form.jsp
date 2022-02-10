@@ -104,7 +104,7 @@
 
                     <tr>
                         <td> Reason: </td>
-                        <td> <textarea name="reason" rows="8" cols="50" value=" "> </textarea> </td>
+                        <td> <textarea name="reason" rows="8" cols="50"> </textarea> </td>
                     </tr>
                     <tr>
                         <td></td>
