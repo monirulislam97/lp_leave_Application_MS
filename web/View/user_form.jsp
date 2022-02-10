@@ -96,7 +96,7 @@
                     </tr>
                     <tr>
                         <td>User's Level:</td>
-                        <td><input type="" name="level" size="50"></td>
+                        <td><input type="text" name="level" size="50"></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -104,6 +104,7 @@
                     </tr>
                 </table>
             </form>
+        </div>
     </body>
 
 </html>

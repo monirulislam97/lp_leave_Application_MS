@@ -27,7 +27,7 @@ public class check_login extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        out.println("sadsadsad");
+        
         HttpSession session = request.getSession();
 
         String myusername = request.getParameter("username");

@@ -79,17 +79,40 @@ public class add_user extends HttpServlet {
         String username = request.getParameter("username");
         String id = request.getParameter("id");
         String password = request.getParameter("password");
-        int level = Integer.parseInt(request.getParameter("level"));
+        String reg = request.getParameter("level");
+        
+        
+        if("register".equals(reg))
+        {
+             int level = 3;
+        
+        
         User u = new User(username, id, password, level);
 
         UserDAO dao = new UserDAOImpl();
 
-        request.getServletContext().setAttribute("u", u);
+         request.getSession().setAttribute("user", u);
+
+        dao.insertUserDAO(u);
+
+        response.sendRedirect("View/staff_main.jsp");
+        
+        
+            
+        }else{
+        int level = Integer.parseInt(reg);
+        
+        
+        User u = new User(username, id, password, level);
+
+        UserDAO dao = new UserDAOImpl();
+
+       
 
         dao.insertUserDAO(u);
 
         response.sendRedirect("View/admin_main.jsp");
-    }
+    }}
 
     /**
      * Returns a short description of the servlet.
