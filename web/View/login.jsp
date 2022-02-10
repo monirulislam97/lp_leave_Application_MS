@@ -21,7 +21,7 @@
                 <p><input type="submit" class="btn" value="Login" /></p>
                 <br />
                 
-                <a href="register.jsp" >Register</a>
+                <a href="../register.jsp" >Register</a>
             </form>
         </div>
     </body>
