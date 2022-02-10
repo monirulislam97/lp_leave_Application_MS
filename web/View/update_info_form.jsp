@@ -25,7 +25,8 @@
                     <th class="Username" align="center"><strong>Username</strong></th>
                     <th class="password" align="center"><strong>Password</strong></th>
                     <th class="level" align="center"><strong>Level</strong></th>
-                    <th align="center"><input name="datatype" type="hidden" id="datatype" value="update"></td>
+                    <th align="center"><input name="datatype" type="hidden" id="datatype" value="update"> 
+                        <input name="level" type="hidden" id="level" value="${user.level}"></th>
                 </tr>
                 <tr>
                     <td align="center"><input name="id" type="hidden" id="id" value="${user.id}"></td>

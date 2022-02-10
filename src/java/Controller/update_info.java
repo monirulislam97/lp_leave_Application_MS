@@ -42,7 +42,9 @@ public class update_info extends HttpServlet {
             dao.updateUserDAO(u);
 
             response.sendRedirect("View/admin_main.jsp");
-        } else if (datatype.equals("update")) {
+        } else {
+            
+           
                 
                 
 
@@ -57,22 +59,17 @@ public class update_info extends HttpServlet {
            
 
             dao.updateUserDAO(u);
-
-            response.sendRedirect("View/manager_main.jsp");
-         } else{    
             
-            String id = request.getParameter("id");
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            int level = Integer.parseInt(request.getParameter("level"));
-            User u = new User(username, id, password, level);
-
-            UserDAO dao = new UserDAOImpl();
-
-
-            dao.updateUserDAO(u);
-
+            
+            
+          if (level==1) {
+            response.sendRedirect("View/admin_main.jsp");
+         } else  if (level==2) {    
+            response.sendRedirect("View/manager_main.jsp");
+        }else {    
             response.sendRedirect("View/staff_main.jsp");
+        }
+        
         }
 
     }
